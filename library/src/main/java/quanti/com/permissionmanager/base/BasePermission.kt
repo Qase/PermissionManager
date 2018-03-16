@@ -22,7 +22,7 @@ import android.support.v4.content.ContextCompat
  * @param permissionName android.Manifest.permission name of permission
  */
 abstract class BasePermission(
-        private val permissionName: String
+        @Suppress("MemberVisibilityCanBePrivate") val permissionName: String
 ) {
     private val requestValue: Int = requestNumber
 
