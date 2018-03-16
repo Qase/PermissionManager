@@ -43,7 +43,7 @@ Usage is simple
        BasePermission.propagatePermissionResult(requestCode, permissions, grantResults)
  }
 ```
-3) Then select appropriate instance based on permission class and ask for permission or check status
+3) Then select appropriate instance based on [permission class](https://developer.android.com/guide/topics/permissions/overview.html#perm-groups) and ask for permission or check status
 ```kotlin
  if (ContactsPermission.permissionState == DECLINED){
        ContactsPermission.requestPermission(this)
