@@ -23,22 +23,17 @@ import android.support.v4.content.ContextCompat
  */
 abstract class BasePermission(
         private val permissionName: String
-)
-{
+) {
     private val requestValue: Int = requestNumber
 
     @Suppress("MemberVisibilityCanBePrivate")
-    var permissionState = if (ContextCompat.checkSelfPermission(staticActivity, permissionName) == PackageManager.PERMISSION_GRANTED)
-    {
+    var permissionState = if (ContextCompat.checkSelfPermission(staticActivity, permissionName) == PackageManager.PERMISSION_GRANTED) {
         PermissionState.GRANTED
-    }
-    else
-    {
+    } else {
         PermissionState.DECLINED
     }
 
-    init
-    {
+    init {
         listOfInstances.add(this)
     }
 
@@ -55,8 +50,7 @@ abstract class BasePermission(
      *
      * @param callback result of action
      */
-    fun requestPermission(callback: IPermissionResult)
-    {
+    fun requestPermission(callback: IPermissionResult) {
         this.callback = callback
 
         ActivityCompat.requestPermissions(
@@ -70,22 +64,17 @@ abstract class BasePermission(
     /**
      * Method, that needs to be propagated from Activity to everything work
      */
-    protected fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray)
-    {
+    protected fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode != requestValue)
             return
 
         // If request is cancelled, the result arrays are empty.
-        permissionState = if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-        {
+        permissionState = if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             PermissionState.GRANTED
-        }
-        else if (!ActivityCompat.shouldShowRequestPermissionRationale(staticActivity, permissionName)) //pay attention to negate sign
+        } else if (!ActivityCompat.shouldShowRequestPermissionRationale(staticActivity, permissionName)) //pay attention to negate sign
         {
             PermissionState.DECLINED_FOR_EVER
-        }
-        else
-        {
+        } else {
             PermissionState.DECLINED
         }
         callback?.onPermissionChange(permissionName, permissionState)
@@ -93,24 +82,20 @@ abstract class BasePermission(
     }
 
 
-    companion object
-    {
+    companion object {
         private var listOfInstances = ArrayList<BasePermission>()
 
         private var requestNumber: Int = 985
-            get()
-            {
+            get() {
                 field++
                 return field
             }
 
         @JvmStatic
                 /**\
-                 *
-                 * BuildConfig.APPLICATION_ID)
+                 * @param appId BuildConfig.APPLICATION_ID)
                  */
-        fun getPermissionSettingsIntent(appId: String): Intent
-        {
+        fun getPermissionSettingsIntent(appId: String): Intent {
             val intent = Intent()
             intent.action = android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS
             intent.data = Uri.parse("package:$appId")
@@ -118,11 +103,12 @@ abstract class BasePermission(
         }
 
         @JvmStatic
-        fun propagatePermissionResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray){
+        fun propagatePermissionResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
             listOfInstances.forEach {
                 it.onRequestPermissionsResult(requestCode, permissions, grantResults)
             }
         }
+
 
         private lateinit var staticActivity: Activity
 
