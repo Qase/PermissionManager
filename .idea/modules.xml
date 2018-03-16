@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PermissionManager.iml" filepath="$PROJECT_DIR$/PermissionManager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/app.iml" filepath="$PROJECT_DIR$/library/app.iml" />
+      <module fileurl="file://F:\Vladislav\AndroidStudioProjects\quanti\PermissionManager\library\app.iml" filepath="F:\Vladislav\AndroidStudioProjects\quanti\PermissionManager\library\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testapp/testapp.iml" filepath="$PROJECT_DIR$/testapp/testapp.iml" />
     </modules>
   </component>
 </project>
