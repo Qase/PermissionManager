@@ -43,6 +43,7 @@ class PlaceholderFragment : Fragment(), IPermissionResult, View.OnClickListener 
         rootView.subtitle.setText(subtitle)
         rootView.state.text = perm.permissionState.name
 
+
         rootView.got_it_button.setOnClickListener(this)
         return rootView
     }

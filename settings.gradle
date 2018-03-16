@@ -1,1 +1,4 @@
-include ':library', ':testapp'
+include ':library'
+
+if (!System.env.JITPACK)
+    include ':testapp'
