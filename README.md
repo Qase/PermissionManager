@@ -10,7 +10,7 @@ Mostly used and tested in Prague based android develpoment company - [Quanti](ht
 * Usable in every JVM language including Java/Kotlin/Scala ...
 * Very easy to use
 * Lightweight
-* Sample [app](github/sampleApp.png) is ready to build 
+* Sample [app](github/gra.png) is ready to build 
 
 ## Cons
 * Need static access to activity
