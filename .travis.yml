@@ -1,0 +1,27 @@
+language: android
+android:
+  components:
+  - tools
+  - platform-tools
+  - extra
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-x86-android-26
+  - sys-img-armeabi-v7a-android-17
+  licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+before_install:
+- chmod +x gradlew
+- yes | sdkmanager "platforms;android-28"
+script:
+- "./gradlew assemble -p library"
+notifications:
+  email: false
+  slack:
+    rooms:
+      - secure: ch2GscPvDBvZdn8LcSbGDNEZD+EleIesBj/j/Ql3lU/7yFgCnWH2Mlol35k9lb6ByUhNjAhFRGpHS7mQ1vvbRHFZRTgWSskU9so1LfNfsSbsbkCz8aywnGXnTPfPCQyKo/5FN1V+KeVRUXybKxHEPRcvfaWXbwN0BGgWZH9de+tq+Pu3QizTuDCsce18XO67IJFZ5KZBDwXP/45qyKvRqRCoUDY3+aUY7hziZt4X6pYJvksnG3BXkFZGwTEUbfDEY3c5P2zlGO6iLqOlFv/Dv6J4J108GdzMTMocgQJKrdNtPTXLfhB1eMHdPgtfB7x5FXY9L5veORUw5jgDSG2Ijb6Ca9h6YI+DfbFflRAK9EFh7MRn4Z2NcFubjGVY42q2Jg9uXbICCWATUAVNCaAsAHiiFpDS0CfoJ2mWnD08EMngu3GF8z+d21mv1Gh3CYoMBcbcfykm2qXwiCDYHbrXlLvssxf+i1qulbANOzCGvx94L7BqQZXM/WNMTgUIqUP0CuJUBwmimVPzSy7MvUGdlaJJO1pT/bIPweOYwitiUGYEpidiJBZYD7h1RM5KASbqv7eYzZ2e7Duo51oe69lQ+n8hOClTr8kTGN3vsQebASiNf4S7bE2ZFBm3psq+xHungrBFBBvIyDTvF9O+eBj6TTU2vovgqP98azYcZ82N3lo=
+    on_success: always
+    on_failure: always
