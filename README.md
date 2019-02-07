@@ -6,6 +6,8 @@ Smart android runtime permission manager written in kotlin language.
 
 Mostly used and tested in Prague based android develpoment company - [Quanti](https://www.quanti.cz/).
 
+Do not use it right now. There might be bugs inside because of new android versions.
+
 ## Features
 * Usable in every JVM language including Java/Kotlin/Scala ...
 * Very easy to use
