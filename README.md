@@ -1,5 +1,11 @@
 [![Release](https://jitpack.io/v/Qase/PermissionManager.svg)](https://jitpack.io/#Qase/PermissionManager)
+[![Build Status](https://travis-ci.org/Qase/PermissionManager.svg?branch=master)](https://travis-ci.org/Qase/PermissionManager)
 [![codebeat badge](https://codebeat.co/badges/ca498e22-a499-4e33-a510-da6050b31ab3)](https://codebeat.co/projects/github-com-qase-permissionmanager-master)
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maintainer: kidal5](https://img.shields.io/badge/Maintainer-kidal5-blue.svg)](mailto:vladislav.trnka@quanti.cz)
+[![Qase: PermissionManager](https://img.shields.io/badge/Qase-PermissionManager-ff69b4.svg)](https://github.com/Qase/PermissionManager)
+
 ## PermissionManager
 
 Smart android runtime permission manager written in kotlin language.
